@@ -49,7 +49,7 @@ let get_updates token offset =
     let ok = json |> member "ok" |> to_bool in
     if ok then
       let results = json |> member "result" |> to_list in
-      Some (List.map update_of_yojson_exn results)
+      Some (List.map updates_of_yojson_exn results)
     else (
       Logs.err (fun m -> m "Failed to get updates: %s" body_str);
       None
