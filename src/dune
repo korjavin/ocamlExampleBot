@@ -1,0 +1,5 @@
+(executable
+ (name bot)
+ (public_name ocamlexamplebot)
+ (libraries cohttp-lwt-unix lwt yojson ppx_deriving_yojson.runtime logs fmt cmdliner)
+ (preprocess (pps ppx_deriving_yojson)))
